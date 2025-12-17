@@ -27,7 +27,7 @@ npm run start
 ```shell
 npm run build
 ```
-## Изображение:
+## Превью:
 
 <img src="https://i.ibb.co/Q7KtRqMd/17-12-2025-13-37-42.gif">
 
