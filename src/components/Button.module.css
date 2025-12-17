@@ -1,0 +1,12 @@
+
+.restart-btn {
+  border: none;
+  width: 310px;
+  height: 30px;
+  margin: 10px;
+  text-align: center;
+  background-color: #bea4fd;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}

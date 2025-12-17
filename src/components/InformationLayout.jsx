@@ -1,3 +1,6 @@
+import PropTypes from "prop-types";
+import Information from "./Information.jsx";
+
 const InformationLayout = ({ isDraw, currentPlayer, isGameEnded }) => {
   if (isDraw === true) {
     return <h1>Ничья</h1>;
@@ -6,6 +9,12 @@ const InformationLayout = ({ isDraw, currentPlayer, isGameEnded }) => {
   } else if (isDraw === false && isGameEnded === false) {
     return <h1>{`Ходит: ${currentPlayer}`}</h1>;
   }
+};
+
+InformationLayout.propTypes = {
+  isDraw: PropTypes.bool,
+  isGameEnded: PropTypes.bool,
+  currentPlayer: PropTypes.string,
 };
 
 export default InformationLayout;

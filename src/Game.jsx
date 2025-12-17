@@ -1,6 +1,8 @@
 import GameLayout from "../src/components/GameLayout.jsx";
 import { useState } from "react";
 import "./index.css";
+import RestartButton from "./components/RestartButton.jsx";
+import PropTypes from "prop-types";
 
 const WIN_PATTERNS = [
   [0, 1, 2],
@@ -19,7 +21,7 @@ function Game() {
   const [isDraw, setIsDraw] = useState(false);
   const [field, setField] = useState(["", "", "", "", "", "", "", "", ""]);
 
-  const handleClick = (index) => {
+  const makeMove = (index) => {
     if (isGameEnded) return;
     if (field[index]) return;
 
@@ -54,8 +56,16 @@ function Game() {
         isDraw={isDraw}
         isGameEnded={isGameEnded}
         currentPlayer={currentPlayer}
-        handleClick={handleClick}
+        makeMove={makeMove}
       />
+      {isGameEnded ? (
+        <RestartButton
+          setIsGameEnded={setIsGameEnded}
+          setField={setField}
+          setCurrentPlayer={setCurrentPlayer}
+          setIsDraw={setIsDraw}
+        />
+      ) : null}
     </>
   );
 }
